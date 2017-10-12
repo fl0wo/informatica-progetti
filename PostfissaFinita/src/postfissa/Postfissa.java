@@ -5,9 +5,9 @@ package postfissa;
  */
 public class Postfissa {
     public static void main(String[] args) {
-        RPN r = new RPN("((10+2)*(7-5)-(3+1)");
+        RPN r = new RPN("((10+2)-(4-1))*2");
         System.out.println(r.toString());
-        System.out.println(r.calcola());
+        System.out.println("Risultato ==" +r.calcola());
     }
     
 }

@@ -21,14 +21,12 @@ public class RPN {
         while (it.hasNext()) {
             Item elemento = it.next();
             if (elemento.isOperatore()) {
-                risposta.push(risultato(risposta.pop(),risposta.pop(), elemento.getOperatore()));
+                risposta.push(risultato(risposta.pop(), risposta.pop(), elemento.getOperatore()));
             } else {
                 risposta.push(elemento.getNumero());
             }
         }
-        
-        
-        
+
         return risposta.pop();
     }
 
@@ -93,6 +91,54 @@ public class RPN {
         String[] dizionario = {"+", "-", "*", "/", "P", "^", "S"};
         String[] parentesi = {"(", ")", "[", "]", "{", "}"};    // inutili per ora :P
 
+        public Lista<Item> leggi(String input) {
+            if (input == null) {
+                return null;
+            }
+            char[] arrayChar = input.toCharArray();
+            Pila<Character> pila = new Pila<>();
+            StringBuilder stringa = new StringBuilder();
+
+            for (int i = 0; i < arrayChar.length; i++) {
+                switch (arrayChar[i]) {
+                    case '+':
+                    case '-':
+                        while (pila.getLunghezza() != 0 && (pila.getFront() == '*' || pila.getFront() == '/')) {
+                            stringa.append(' ');
+                            stringa.append(pila.pop());
+                        }
+                        stringa.append(' ');
+                        pila.push(arrayChar[i]);
+                        break;
+                    case '*':
+                    case '/':
+                        stringa.append(' ');
+                        pila.push(arrayChar[i]);
+                        break;
+                    case '(':
+                        pila.push(arrayChar[i]);
+                        break;
+                    case ')':
+                        while (pila.getLunghezza() != 0 && pila.getFront() != '(') {
+                            stringa.append(' ');
+                            stringa.append(pila.pop());
+                        }
+                        pila.pop();
+                        break;
+                    default:
+                        stringa.append(arrayChar[i]);
+                        break;
+                }
+            }
+
+            while (pila.getLunghezza() != 0) {
+                stringa.append(' ').append(pila.pop());
+            }
+            Lista<Item> lista = daStringa(stringa.toString());
+            return lista;
+        }
+
+        /*
         protected Lista<Item> leggi(String equazione) {
             Lista<Item> lista = new Lista<>();
             char pos, valoreSpostante = 0;
@@ -132,11 +178,10 @@ public class RPN {
                         }
                     }
 
-                    /*
-                    System.out.println("<-" + nSinistra);
-                    System.out.println("." + pos);
-                    System.out.println("->" + nDestra);
-                     */
+                    //System.out.println("<-" + nSinistra);
+                    //System.out.println("." + pos);
+                    //System.out.println("->" + nDestra);
+        
                     int n1 = Integer.parseInt(nSinistra);
                     int n2 = Integer.parseInt(nDestra);
                     char operatore = pos;
@@ -154,15 +199,15 @@ public class RPN {
 
             return lista;
         }
-
+         */
         private boolean isNumero(char n) {
             int valore = (int) n;
             return valore > 47 && valore < 58;
         }
 
-        private boolean isOperatore(char pos) {
+        private boolean isOperatore(String pos) {
             for (int i = 0; i < dizionario.length; i++) {
-                if (pos == dizionario[i].charAt(0)) {
+                if (pos.equals(dizionario[i])) {
                     return true;
                 }
             }
@@ -209,6 +254,33 @@ public class RPN {
                 }
             }
             return "Lettore{\n" + costrutta + "  }";
+        }
+
+        private Lista<Item> daStringa(String toString) {
+            String parte = "";
+            Lista<Item> lista = new Lista<>();
+            for (int i = 0; i < toString.length(); i++) {
+                if (toString.charAt(i) != ' ') {
+                    parte += toString.charAt(i);
+                } else {
+                    Item item;
+                    if (isOperatore(parte)) {
+                        item = new Item(parte.charAt(0));
+                    } else {
+                        item = new Item(Integer.parseInt(parte));
+                    }
+                    lista.addTail(item);
+                    parte = "";
+                }
+            }
+            Item item;
+            if (isOperatore(parte)) {
+                item = new Item(parte.charAt(0));
+            } else {
+                item = new Item(Integer.parseInt(parte));
+            }
+            lista.addTail(item);
+            return lista;
         }
 
     }
