@@ -255,33 +255,5 @@ public class RPN {
             }
             return "Lettore{\n" + costrutta + "  }";
         }
-
-        private Lista<Item> daStringa(String toString) {
-            String parte = "";
-            Lista<Item> lista = new Lista<>();
-            for (int i = 0; i < toString.length(); i++) {
-                if (toString.charAt(i) != ' ') {
-                    parte += toString.charAt(i);
-                } else {
-                    Item item;
-                    if (isOperatore(parte)) {
-                        item = new Item(parte.charAt(0));
-                    } else {
-                        item = new Item(Integer.parseInt(parte));
-                    }
-                    lista.addTail(item);
-                    parte = "";
-                }
-            }
-            Item item;
-            if (isOperatore(parte)) {
-                item = new Item(parte.charAt(0));
-            } else {
-                item = new Item(Integer.parseInt(parte));
-            }
-            lista.addTail(item);
-            return lista;
-        }
-
     }
 }
