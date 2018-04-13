@@ -1,0 +1,28 @@
+/* 
+    Created on : 11-apr-2018, 14.40.37
+    Author     : Florian
+*/
+
+body{
+    background-color: #ffd684
+}
+
+button{
+    position: absolute;
+
+    width : 40px;
+    height: 40px;
+
+    background-color: #f46842;
+    color: whitesmoke;
+    border-color: #ffad83;
+
+    border-radius: 20px;
+}
+
+.centrato{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
