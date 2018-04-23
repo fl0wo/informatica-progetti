@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Romanzi e racconti</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/style.css" rel="stylesheet" type="text/css">
+    </head>
+
+    <body>
+
+        <div id="header">
+            <div id="textheader">
+                <h1 style="color:#265090; font-size: 60px;">Romanzi e racconti</h1>
+            </div>
+            <div id="headerLine"></div>
+            <div id="text2header">
+                Cerca libri e romanzi... <br>
+                <input type="text" name="ricerca_romanzo">
+                <button>find</button><br>
+            </div>
+        </div>
+
+        <hr>
+
+        <div id="aside">
+            <div style="height: 720px;">
+                Romanzi e racconti é semplicemente una base dati di romanzi e racconti. Puoi aggiungere i libri che ti piacciono,recensirli,etichettarli e condividerli. E puoi andare a vedere che cosa piace agli altri.
+                <hr>
+
+
+                <h2 id="asideTitoli">
+                    chi sei?
+                </h2>
+                <div id="asideCampi">
+                    username
+                    <input style="margin-left: 10px" maxlength="13" size="10" type="text" name="username">
+                </div>
+                <div id="asideCampi">
+                    password
+                    <input style="margin-left: 10px" maxlength="13" size="10" type="text" name="username">
+                </div>
+                <br>
+                <button style="  margin:auto;display:block;">sign in</button>
+                <hr>
+
+
+
+                <h2 id="asideTitoli">
+                    regìstrati!
+                </h2>
+                <div id="asideCampi">
+                    username
+                    <input style="margin-left: 10px" maxlength="13" size="10" type="text" name="username">
+                </div>
+
+                <div id="asideCampi">
+                    password
+                    <input style="margin-left: 10px" maxlength="13" size="10" type="text" name="username">
+                </div>
+                <div id="asideCampi">
+                    repeated 
+                    <input style="margin-left: 10px" maxlength="13" size="10" type="text" name="username">
+                </div>
+                <div id="asideCampi">
+                    email
+                    <input style="margin-left: 30px" maxlength="13" size="10" type="text" name="username">
+                </div>
+                <br>
+                <input style="margin:auto;display:block;" type="checkbox" maxlength="13" size="10" name="username">I agree to the Term of Use.<br>
+                <button style="margin:auto;display:block;">sign in</button><br>
+
+
+            </div>
+
+            <div id="divisore"></div>
+            <div id="bluebox">
+                <h1 id="scopri"> Scopri.</h1>
+                <h2 id="cercaB">
+                    Cerca nella base dati per titolo, autore...
+                </h2>
+                <div style="margin-top:10px;display:flex; width: 550px">
+                    <input maxlength="13" size="60" type="text" name="username">
+                    <button style="margin:auto;display:block;">fruga</button>
+                </div>
+                <div > <!--id="articleBody"-->
+                    <h1>Esplora</h1>
+                    <b>Libri aggiornati di recente</b> | Tag popolari | Libri consigliati
+
+                </div style="margin-top: 75px">
+                <div class="divTable blueTable">
+                    <br>
+                    <div class="divTableBody">
+                        <div class="divTableRow">
+                            <div class="divTableCell" >
+                                <h2 id="titolo">Tom De Marco, Timothy Lister: <i>Peopleware</i></h2>
+                                scifi, action, sci-fi, lucas, great,<br>
+                                space, starwars, adventure,<br>
+                                boring, sequel, ...<br>
+                                <br>
+                                <small>in 16 lo raccomandano</small><br>
+                                <small>in 26 lo hanno letto</small><br></div>
+                            <div class="divTableCell" style="border-right: 2px solid #FFFFFF">
+                                <h2 id="titolo">J.R.R. Tolkien, <i>Il signore degli anelli</i></h2>
+                                drama, prison, thriller, quality,<br>
+                                over-rated, injustice, added,<br>
+                                jailbreak, this, escape, ...<br>
+                                <br>
+                                <small>in 16 lo raccomandano</small><br>
+                                <small>in 26 lo hanno letto</small><br></div></div>
+                        <div class="divTableRow">
+                            <div class="divTableCell" style="border-bottom: 2px solid #FFFFFF">
+                                <h2 id="titolo">Douglas Coupland, <i>Elanor Rigby</i></h2>
+                                drugs, drama, weirdi, addiction,<br>
+                                love, drug, ignorant, bliss, tragic,<br>
+                                morale, ...<br>
+                                <br>
+                                <small>in 16 lo raccomandano</small><br>
+                                <small>in 26 lo hanno letto</small><br>
+                            </div>
+                            <div class="divTableCell" style="border: 2px solid #FFFFFF">
+                                <h2 id="titolo">C. S. Lewis, <i>Lontano dal pianeta silenzioso</i></h2>
+                                pirates, action, adventure,<br>
+                                comedy, depp, fantasy, pirate,<br>
+                                curse, jack, caribbean, ...<br>
+                                <br>
+                                <small>in 116 lo raccomandano</small><br>
+                                <small>in 216 lo hanno letto</small><br>  
+                            </div></div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+        <div>
+            <footer>
+                <hr>
+                about | rss |  | term of use | contact us <br>
+            </footer>
+        </div>
+    </body>
+</html>
