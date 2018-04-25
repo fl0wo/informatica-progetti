@@ -1,0 +1,86 @@
+<html>
+    <head>
+        <title>Codice Fiscale Online</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="calcolo_codice_fiscale.js"></script>
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id="form_wrapper">
+                <h1 id="title">Codice Fiscale Online</h1>
+                <form>
+                    <table>
+                        <tr>
+                            <td>Nome</td>
+                            <td><input type="text" id="nome" onkeydown="modifyingForm()" autocomplete="off"></td>
+                        </tr>
+                        <tr>
+                            <td>Cognome</td>
+                            <td><input type="text" id="cognome" onkeydown="modifyingForm()" autocomplete="off"></td>
+                        </tr>
+                        <tr>
+                            <td>Sesso</td>
+                            <td>
+                                <label class="container" style="margin-left: 10px;">Maschio
+                                    <input type="radio" name="sesso" id="maschio" checked="checked" onClick="modifyingForm()">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="container">Femmina
+                                    <input type="radio" name="sesso" id="femmina" onClick="modifyingForm()">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Luogo di nascita</td>
+                            <td><input type="text" id="luogoDiNascita" onkeydown="modifyingForm()" autocomplete="off"></td>
+                        </tr>
+                        <tr>
+                            <td>Provincia (Sigla)</td>
+                            <td><input type="text" id="provincia" onkeydown="modifyingForm()" autocomplete="off"></td>
+                        </tr>
+                        <tr>
+                            <td>Data di nascita</td>
+                            <td><input type="date" id="dataDiNascita" onkeydown="modifyingForm()" onchange="modifyingForm()"></td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+            <button id="calcolaCodiceFiscale" onclick="__calcola()">Calcola il codice fiscale</button>
+            <div id="codiceFiscaleCalcolato"></div>
+            <script>
+                let calculated = false;
+                function __calcola() {
+                    
+                    let giorn = document.getElementById("dataDiNascita").value.substring(8);
+                    let mese = document.getElementById("dataDiNascita").value.substring(5, 7);
+                    let anno = document.getElementById("dataDiNascita").value.substring(0, 4);
+                    
+                    if (giorn === "" || mese === "" || anno === "")
+                        return;
+                    let cf = CodiceFiscale.compute({
+                        name: document.getElementById("nome").value,
+                        surname: document.getElementById("cognome").value,
+                        gender: document.getElementById("maschio").checked ? "M" : "F",
+                        day: giorn,
+                        month: mese,
+                        year: anno,
+                        birthplace: document.getElementById("luogoDiNascita").value,
+                        birthplaceProvincia: document.getElementById("provincia").value});
+                    if (cf.length === 16) {
+                        document.getElementById("codiceFiscaleCalcolato").innerHTML = cf;
+                        calculated = true;
+                    }
+                }
+                function modifyingForm() {
+                    if (calculated) {
+                        document.getElementById("codiceFiscaleCalcolato").innerHTML = "";
+                        calculated = false;
+                    }
+                }
+            </script>
+        </div>
+    </body>
+</html>
