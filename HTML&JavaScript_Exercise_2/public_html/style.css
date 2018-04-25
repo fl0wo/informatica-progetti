@@ -1,0 +1,152 @@
+
+body{
+    background-color: lightblue;
+}
+
+div#wrapper {
+    margin-left: auto;
+    margin-right: auto;
+    height: 100%;
+    text-align: center;
+}
+
+form {
+    margin-left: 65px;
+    margin-bottom: 5px;
+}
+input[type=reset]#reset {
+    margin-right: 20px;
+}
+input[type=submit]#invia {
+    margin-right: 0px;
+}
+select#ateneo {
+    padding: 5px 5px;
+}
+option#defaultOption {
+    display:none;
+}
+tr {
+    height: 50px;
+}
+td {
+    text-align: center;
+    width: 200px;
+}
+/*custom radio button*/
+label.container {
+    width: 50px;
+    float: left;
+    margin: 0 20px 0 0;
+}
+label.container {
+    display: block;
+    position: relative;
+    padding-left: 25px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+label.container input[type=radio] {
+    display: none;
+}
+span.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    border-radius: 50px;
+}
+label.container:hover input[type=radio] ~ span.checkmark {
+    background-color: black;
+}
+label.container input[type=radio]:checked ~ span.checkmark {
+    background-color: black;
+}
+span.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+label.container input[type=radio]:checked ~ span.checkmark:after {
+    display: block;
+}
+label.container span.checkmark:after {
+    top: 6px;
+    left: 6px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: white;
+}
+/*custom radio button*/
+/*custom checkbox*/
+label#container {
+    display: block;
+    position: relative;
+    margin-bottom: 35px;
+    margin-left: 4px;
+    width: 0px;
+    height: 0px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+input[type=checkbox]#studenteLavoratore {
+    display: none;
+}
+span#checkmark {
+    position: absolute;
+    top: 4px;
+    left: 5px;
+    height: 20px;
+    width: 20px;
+    background-color: gray;
+    border: 2px solid black;
+    border-right: none;
+    border-bottom: none;   
+}
+label#container:hover input[type=checkbox] ~ span#checkmark {
+    background-color: gray;
+}
+label#container input[type=checkbox]:checked ~ span#checkmark {
+    background-color: gray;
+}
+label#container input[type=checkbox]:checked ~ span#checkmark:after {
+    display: block;
+}
+span#checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+span#checkmark:after {
+    left: 5.5px;
+    top: 0.5px;
+    width: 6.5px;
+    height: 13px;
+    border: solid gray;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+/*custom checkbox*/
+/*form*/
+
+/*label for result*/
+div#datiInseritiVerificati {
+    width: 100%;
+    height: 60px;
+    font-weight: bold;
+    color: white;
+    cursor: default;
+    outline: none;
+    text-align: center;
+    font-size: 50px;
+    margin-top: 20px;
+}
+/*label for result*/
