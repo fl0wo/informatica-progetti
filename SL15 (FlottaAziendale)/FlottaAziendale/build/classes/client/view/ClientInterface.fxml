@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.controller.ClientInterfaceController">
+   <children>
+      <SplitPane dividerPositions="0.42642140468227424" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="398.0" prefWidth="233.0">
+               <children>
+                  <TableView fx:id="vehicleTable" layoutX="-26.0" layoutY="-12.0" prefHeight="308.0" prefWidth="252.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="43.0">
+                    <columns>
+                      <TableColumn fx:id="vehicleColumn" prefWidth="252.0" text="Vehicles:" />
+                    </columns>
+                  </TableView>
+                  <Button layoutX="57.0" layoutY="36.0" mnemonicParsing="false" onAction="#handleNewVehicleAction" prefHeight="44.0" prefWidth="235.0" text="ADD VEHICLE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="180.0" layoutY="361.0" mnemonicParsing="false" onAction="#handleUpdateVehicleAction" text="Update" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="133.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="363.0">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+                <Button layoutX="24.0" layoutY="361.0" mnemonicParsing="false" onAction="#handleRemoveVehicleAction" text="Remove" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="133.0" AnchorPane.topAnchor="363.0">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <GridPane layoutX="11.0" layoutY="67.0" prefHeight="305.0" prefWidth="324.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="60.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="152.0" minWidth="10.0" prefWidth="151.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="159.0" minWidth="10.0" prefWidth="149.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label text="Targa:" />
+                        <Label text="Marca:" GridPane.rowIndex="1" />
+                        <Label text="Latituduine:" GridPane.rowIndex="2" />
+                        <Label text="Longitudine:" GridPane.rowIndex="3" />
+                        <Label text="Data:" GridPane.rowIndex="4" />
+                        <Label text="Ora:" GridPane.rowIndex="5" />
+                        <Label text="Si trova vicino a:" GridPane.rowIndex="6" />
+                        <Label fx:id="targa" GridPane.columnIndex="1" />
+                        <Label fx:id="marca" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label fx:id="latitudine" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label fx:id="longitudine" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <Label fx:id="data" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <Label fx:id="ora" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <Label fx:id="nearestStop" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                     </children>
+                  </GridPane>
+                  <Label layoutX="27.0" layoutY="24.0" prefHeight="54.0" prefWidth="314.0" text="Last vehicle detection:" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="5.0">
+                     <font>
+                        <Font name="System Bold" size="30.0" />
+                     </font>
+                  </Label>
+               </children></AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
