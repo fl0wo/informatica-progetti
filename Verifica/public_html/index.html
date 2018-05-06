@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Template</title>
+        <script src ="script/codice.js"></script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="stile/main.css" />
+    </head>
+    <body>
+
+        <div class="cont_heg_20"></div>
+
+        <div class="cont_select_center">
+
+                <select  id = "continente" onchange="__aggiorna_continente()">
+                    <option></option>
+                    <option>Europe (EU)</option>
+                    <option>North America (NA)</option>
+                    <option>South America (SA)</option>
+                    <option>Africa (AF)</option>
+                    <option>Asian (AS)</option>
+                    <option>Oceania (OC)</option>
+                    <option>Antartica (AN)</option>
+                </select>  
+
+            <select id = "stato">
+                <option></option>
+            </select>
+
+            <input type ="text" id ="find" oninput='__printa()'>
+
+            <br>
+
+
+            <div style = "text-align : center">
+                <button onclick = "Weather.__make_JSON(Weather.__load_weather())">CONNETTITI</button>
+                <button onclick = "Weather.__get_humidity()">UMIDITA</button>
+                <button onclick = "Weather.__get_temperature()">TEMPERATURA</button>
+                <button onclick = "Weather.__get_pression()">PRESSIONE</button>  
+            </div>
+
+
+
+        </div>
+      
+
+
+        <div id="suggerimenti">
+
+        </div>
+
+        <script>
+            __costruisci_albero();
+            __aggiorna_continente();
+        </script>
+
+    </body>
+</html>
