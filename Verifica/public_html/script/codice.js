@@ -44,11 +44,13 @@ class Weather {
                 ris = this.responseText;
             }
         };
-        
+
         var e = document.getElementById("stato");
         var country = trie[id_continente_selezionato][e.options[e.selectedIndex].value][1].find(document.getElementById("find").value.toLowerCase());
         var city = trie[id_continente_selezionato][e.options[e.selectedIndex].value][0];
-        
+
+        alert(city + " : " + country);
+
         xhttp.open("GET", "http://api.openweathermap.org/data/2.5/weather?q=" + city + "," + country[0] + "&APPID=209a1816d8e3783a3c3b5e8ec118424f", false);
         xhttp.send();
 
@@ -60,7 +62,11 @@ class Weather {
     }
 
     static __get_temperature() {
-        alert(this.json.main.temp + " Kelvin " +"\n"+((this.json.main.temp |0)-273.15)+" C°");
+        alert(
+                this.json.main.temp + " Kelvin " +
+                "\n" + ((this.json.main.temp | 0) - 273.15) + " C°" + "\n" + " Kelvin " +
+                "\n" + ((this.json.main.temp | 0) - 32) * (5/9) + " C°"
+                );
     }
 
     static __get_humidity() {
@@ -96,8 +102,8 @@ function __costruisci_albero() {
                     trie[linee[2]][linee[4]] = [linee[5], new SuffixTrie()];
                 }
 
-                if(linee[10][0] == '"'){
-                    linee[10] = linee[10].substring(1,linee[10].lenght-1);
+                if (linee[10][0] == '"') {
+                    linee[10] = linee[10].substring(1, linee[10].lenght - 1);
                 }
 
                 trie[linee[2]][linee[4]][1].add(linee[10]);
