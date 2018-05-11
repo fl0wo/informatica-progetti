@@ -1,0 +1,34 @@
+/* 
+    Created on : 11-mag-2018, 8.18.50
+    Author     : florian.sabani
+*/
+
+.centrato{
+	margin-top: 100px;
+	text-align: center;
+}
+.bottone{
+	border-radius: 50px;
+	width: 100px;
+	height: 100px;
+}
+.rosso{
+	background-color: red;
+}
+.verde{
+	background-color: green;
+}
+.blue{
+	background-color: blue;
+}
+.grigio{
+	background-color: lightgoldenrodyellow;
+}
+
+.sinistra{
+	text-align: left;
+}
+
+.destra{
+	text-align: right;
+}
