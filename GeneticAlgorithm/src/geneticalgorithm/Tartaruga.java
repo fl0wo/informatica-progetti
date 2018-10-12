@@ -94,6 +94,17 @@ public class Tartaruga {
         }
 
     }
+    
+    public void gotoXY(double x, double y,double grossezza) {
+        double oldx = this.x;
+        double oldy = this.y;
+        this.x = x;
+        this.y = y;
+        if (this.penDown) {
+            g.linea(oldx, oldy, this.x, this.y,this.colore,grossezza);
+        }
+
+    }
 
     public void setColore(Color c) {
         this.colore = c;

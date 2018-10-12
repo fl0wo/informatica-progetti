@@ -226,6 +226,8 @@ public final class GraficaSemplice implements ActionListener, MouseListener, Mou
         offscreen.setColor(penColor);
         draw();
     }
+    
+    
 
     public double getGrossezza() {
         return penRadius;
@@ -835,4 +837,5 @@ public final class GraficaSemplice implements ActionListener, MouseListener, Mou
         keysDown = new TreeSet();
         Scheduler.add(this);
     }
+
 }
